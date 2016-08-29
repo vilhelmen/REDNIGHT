@@ -168,6 +168,7 @@ if __name__ == '__main__':
 
     if datetime.now() < params['begin']:
         time_to_start = (params['begin'] - datetime.now()).seconds
+        logging.info('Sleeping for %s seconds', time_to_start)
         Event().wait(timeout=time_to_start)
 
     logging.debug('%s', images)
